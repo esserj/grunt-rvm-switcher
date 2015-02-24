@@ -33,7 +33,7 @@ module.exports = function(grunt) {
       default_options: {
         options: {
             ruby_version: '2.1.2',
-            virtual_machine: 'styleguide-1.0',
+            gem_set: 'styleguide-1.0',
             rvm_path: '$HOME/.rvm/scripts/rvm'
         }
       }

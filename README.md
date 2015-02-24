@@ -27,7 +27,7 @@ grunt.initConfig({
   rvm_switch: {
     options: {
       ruby_version: '2.1.2',
-      virtual_machine: 'styleguide-1.0',
+      gem_set: 'styleguide-1.0',
       rvm_path: '$HOME/.rvm/scripts/rvm'
     },
   },
@@ -42,11 +42,11 @@ Default value: `2.1.2`
 
 The ruby version to use for the vm.
 
-#### options.virtual_machine
+#### options.gem_set
 Type: `String`
 Default value: `styleguide-1.0`
 
-The virtual machine config to load.
+The gem set to use.
 
 #### options.rvm_path
 Type: `String`
@@ -62,26 +62,9 @@ In this example, the default options are used to do something with whatever. So 
 ```js
 grunt.initConfig({
   rvm_switcher: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
-  },
-});
-```
-
-#### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
-
-```js
-grunt.initConfig({
-  rvm_switcher: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+        ruby_version: '2.0.0',
+        virtual_machine: 'MyVirtualMachineConfigName',
     },
   },
 });

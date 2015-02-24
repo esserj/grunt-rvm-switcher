@@ -18,14 +18,14 @@ module.exports = function(grunt) {
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
             ruby_version: '2.1.2',
-            virtual_machine: 'styleguide-1.0',
+            gem_set: 'styleguide-1.0',
             rvm_path: '$HOME/.rvm/scripts/rvm'
         });
 
-        var result = execSync.exec( options.rvm_path + ' ' + options.ruby_version + '@' + options.virtual_machine);
+        var result = execSync.exec( options.rvm_path + ' ' + options.ruby_version + '@' + options.gem_set);
 
         if (result.code == 0) {
-            grunt.log.ok('RVM is now running on ' + options.ruby_version + '@' + options.virtual_machine);
+            grunt.log.ok('Ruby Version Manager is now running on ' + options.ruby_version + '@' + options.gem_set);
         } else {
             grunt.warn(
                 'Something failed when running rvm, make sure your rvm_path is set correctly and that you are ' +
