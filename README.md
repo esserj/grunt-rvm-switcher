@@ -17,19 +17,18 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-rvm-switcher');
 ```
 
-## The "rvm_switcher" task
+## The "rvm_switch" task
 
 ### Overview
 In your project's Gruntfile, add a section named `rvm_switcher` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  rvm_switcher: {
+  rvm_switch: {
     options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
+      ruby_version: '2.1.2',
+      virtual_machine: 'styleguide-1.0',
+      rvm_path: '$HOME/.rvm/scripts/rvm'
     },
   },
 });
@@ -37,17 +36,23 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.ruby_version
 Type: `String`
-Default value: `',  '`
+Default value: `2.1.2`
 
-A string value that is used to do something with whatever.
+The ruby version to use for the vm.
 
-#### options.punctuation
+#### options.virtual_machine
 Type: `String`
-Default value: `'.'`
+Default value: `styleguide-1.0`
 
-A string value that is used to do something else with whatever else.
+The virtual machine config to load.
+
+#### options.rvm_path
+Type: `String`
+Default value: `$HOME/.rvm/scripts/rvm`
+
+The path to your rvm script (this cannot be the bin)
 
 ### Usage Examples
 
